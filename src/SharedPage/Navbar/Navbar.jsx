@@ -1,7 +1,23 @@
 import { Link } from "react-router-dom";
 import logo from '../../assets/kitty-krazy-logo.png'
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+    const { user, logout } = useContext(AuthContext)
+
+    const handleLogout = () => {
+        logout()
+            .then(() => {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Logout Successful',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            })
+    }
 
     const navItem = <div className="lg:flex ">
         <div className="lg:flex">
@@ -12,7 +28,9 @@ const Navbar = () => {
             <li><Link to={'/blog'} className="font-semibold text-xl md:mt-3 me-12">Blog</Link></li>
         </div>
         <div>
-            <button className="btn btn-outline btn-secondary mt-4 lg:ms-auto me-3 rancho">Appointment</button>
+            <button className="btn btn-secondary mt-4 lg:ms-auto me-3 rancho">
+                {user ? <Link onClick={handleLogout} className='text-decoration-none text-white px-3' to='/login'>Logout</Link> : <Link to='/login' className='text-decoration-none text-white' >Login</Link>}
+            </button>
         </div>
     </div>
 
