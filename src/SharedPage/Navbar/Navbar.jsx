@@ -12,7 +12,7 @@ const Navbar = () => {
             <li><Link to={'/blog'} className="font-semibold text-xl md:mt-3 me-12">Blog</Link></li>
         </div>
         <div>
-            <button className="btn btn-outline btn-secondary mt-4 lg:ms-auto me-3">Appointment</button>
+            <button className="btn btn-outline btn-secondary mt-4 lg:ms-auto me-3 rancho">Appointment</button>
         </div>
     </div>
 
@@ -23,14 +23,14 @@ const Navbar = () => {
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 rancho">
                         {navItem}
                     </ul>
                 </div>
                 <Link className="btn btn-ghost normal-case text-xl"><img src={logo} className="w-16 rounded-full" alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu ">
+                <ul className="menu rancho">
                     {navItem}
                 </ul>
             </div>

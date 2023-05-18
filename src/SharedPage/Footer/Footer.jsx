@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaHome, FaRegEnvelop
 
 const Footer = () => {
     return (
-        <footer className="footer ps-14 md:ps-10 lg:ps-24 py-10 text-white  bg-sky-500">
+        <footer className="footer ps-14 md:ps-10 lg:ps-24 py-10 text-white bg-sky-500">
             <div>
                 <span className="footer-title">About Us</span>
                 <p className="link link-hover">We offer a premium service, whether you are shopping <br /> at one of our flagship stores or via our website!</p>
