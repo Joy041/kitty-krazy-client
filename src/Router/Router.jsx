@@ -5,6 +5,7 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import Error from "../Pages/Error/Error";
 import AddToys from "../Pages/AddToys/AddToys";
+import AllToys from "../Pages/AllToys/AllToys";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
         {
           path: 'addToy',
           element: <AddToys></AddToys>
+        },
+        {
+          path: 'allToy',
+          element: <AllToys></AllToys>,
+          loader: () => fetch('https://kitty-krazy-server.vercel.app/products')
         }
       ]
     },

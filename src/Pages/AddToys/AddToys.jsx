@@ -1,14 +1,50 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const AddToys = () => {
     const {user} = useContext(AuthContext)
 
+    const handleAddToyForm = event => {
+        event.preventDefault()
+        const form = event.target;
+        const name = form.name.value;
+        const seller = form.seller.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const price = form.price.value;
+        const ratting = form.ratting.value;
+        const quantity = form.quantity.value;
+        const category = form.category.value;
+        const details = form.details.value;
+
+        const allInformation = {name, seller, photo, email, price, ratting, quantity, category, details}
+
+        fetch('https://kitty-krazy-server.vercel.app/toys', {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(allInformation)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Go to My Booking for confirm your order',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
+
+    }
 
     return (
         <div className="w-2/4 mx-auto my-14">
-            <form className="mx-auto" >
+            <form className="mx-auto" onSubmit={handleAddToyForm} >
                 <div className="flex lg:flex-row flex-col lg:justify-between">
                     <div className="">
                         <div className="form-control">
@@ -83,7 +119,7 @@ const AddToys = () => {
                 <div className="form-control">
                     <textarea className="textarea textarea-black border-inherit w-full h-52 mt-6" name="details" placeholder="Details Description"></textarea>
                 </div>
-                <button className='btn bg-orange-300 w-full my-8 text-2xl rancho text-black'>Add Toy</button>
+                <input className='btn bg-orange-300 w-full my-8 text-2xl rancho text-black' type="submit" value= "Add Toy" />
             </form>
         </div>
     );

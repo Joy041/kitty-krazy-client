@@ -22,7 +22,7 @@ const Navbar = () => {
     const navItem = <div className="lg:flex ">
         <div className="lg:flex">
             <li><Link to={'/'} className="font-semibold text-xl md:mt-3">Home</Link></li>
-            <li><Link to={'/about'} className="font-semibold text-xl md:mt-3">All Toys</Link></li>
+            <li><Link to={'/allToy'} className="font-semibold text-xl md:mt-3">All Toys</Link></li>
             {
                 user?.email ? <>
                     <li><Link to={'/service'} className="font-semibold text-xl md:mt-3">My Toys</Link></li>
