@@ -15,7 +15,7 @@ const Navbar = () => {
                     text: 'Logout Successful',
                     icon: 'success',
                     confirmButtonText: 'Cool'
-                  })
+                })
             })
     }
 
@@ -23,11 +23,19 @@ const Navbar = () => {
         <div className="lg:flex">
             <li><Link to={'/'} className="font-semibold text-xl md:mt-3">Home</Link></li>
             <li><Link to={'/about'} className="font-semibold text-xl md:mt-3">All Toys</Link></li>
-            <li><Link to={'/service'} className="font-semibold text-xl md:mt-3">My Toys</Link></li>
-            <li><Link to={'/service'} className="font-semibold text-xl md:mt-3">Add A Toy</Link></li>
+            {
+                user?.email ? <>
+                    <li><Link to={'/service'} className="font-semibold text-xl md:mt-3">My Toys</Link></li>
+                    <li><Link to={'/addToy'} className="font-semibold text-xl md:mt-3">Add A Toy</Link></li>
+                </> : ''
+            }
+
             <li><Link to={'/blog'} className="font-semibold text-xl md:mt-3 me-12">Blog</Link></li>
         </div>
-        <div>
+        <div className="flex">
+                {
+                    user ? <div><a href="#" data-toggle="tooltip" title={`${user.displayName}`}><img className="me-3 rounded w-8 mt-6" src={user.photoURL} alt="" /></a></div> : <>Profile</>
+                }
             <button className="btn btn-secondary mt-4 lg:ms-auto me-3 rancho">
                 {user ? <Link onClick={handleLogout} className='text-decoration-none text-white px-3' to='/login'>Logout</Link> : <Link to='/login' className='text-decoration-none text-white' >Login</Link>}
             </button>
