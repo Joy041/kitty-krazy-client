@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         {
           path: 'allToy',
           element: <AllToys></AllToys>,
-          loader: () => fetch('https://kitty-krazy-server.vercel.app/products')
+          loader: () => fetch('https://kitty-krazy-server.vercel.app/totalProductNumber')
         },
         {
           path: 'details/:id',
