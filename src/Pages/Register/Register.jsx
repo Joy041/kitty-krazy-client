@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 const Register = () => {
@@ -52,11 +53,16 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                setSuccess('Register successful')
                 userProfile(loggedUser, name, photo)
                 userVerification(loggedUser)
                 form.reset()
                 navigate('/login')
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Register successful',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
             })
             .catch(error => {
                 setError(error)
@@ -82,8 +88,13 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                setSuccess('Login Successful')
                 navigate('/login')
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Register successful',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
             })
             .catch(error => setError(error.message))
     }
@@ -94,8 +105,13 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                setSuccess('Login Successful')
                 navigate('/login')
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Register successful',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
             })
             .catch(error => setError(error.message))
     }

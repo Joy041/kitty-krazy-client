@@ -33,12 +33,33 @@ const AddToys = () => {
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',
-                    text: 'Go to My Booking for confirm your order',
+                    text: 'Your product added successfully',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
             }
         })
+
+        fetch('https://kitty-krazy-server.vercel.app/myToys', {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(allInformation)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Your product added successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
+
+
 
     }
 

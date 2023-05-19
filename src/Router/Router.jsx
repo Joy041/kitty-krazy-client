@@ -7,6 +7,7 @@ import Error from "../Pages/Error/Error";
 import AddToys from "../Pages/AddToys/AddToys";
 import AllToys from "../Pages/AllToys/AllToys";
 import Details from "../Pages/Details/Details";
+import MyToys from "../Pages/MyToys/MyToys";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
           path: 'details/:id',
           element: <Details></Details>,
           loader: ({params}) => fetch(`https://kitty-krazy-server.vercel.app/products/${params.id}`)
+        },
+        {
+          path: 'myToys',
+          element: <MyToys></MyToys>,
+          loader: () => fetch('https://kitty-krazy-server.vercel.app/myToys')
         }
       ]
     },

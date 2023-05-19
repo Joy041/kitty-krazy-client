@@ -25,7 +25,7 @@ const Navbar = () => {
             <li><Link to={'/allToy'} className="font-semibold text-xl md:mt-3">All Toys</Link></li>
             {
                 user?.email ? <>
-                    <li><Link to={'/service'} className="font-semibold text-xl md:mt-3">My Toys</Link></li>
+                    <li><Link to={'/myToys'} className="font-semibold text-xl md:mt-3">My Toys</Link></li>
                     <li><Link to={'/addToy'} className="font-semibold text-xl md:mt-3">Add A Toy</Link></li>
                 </> : ''
             }
