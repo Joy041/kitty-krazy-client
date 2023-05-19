@@ -15,7 +15,8 @@ const router = createBrowserRouter([
       children: [
         {
             path: '/',
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader: () => fetch('https://kitty-krazy-server.vercel.app/allProducts')
         },
         {
             path: '/register',

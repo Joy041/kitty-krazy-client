@@ -34,7 +34,7 @@ const Navbar = () => {
         </div>
         <div className="flex">
                 {
-                    user ? <div><a href="#" data-toggle="tooltip" title={`${user.displayName}`}><img className="me-3 rounded w-8 mt-6" src={user.photoURL} alt="" /></a></div> : <>Profile</>
+                    user ? <div><a href="#" data-toggle="tooltip" title={`${user.displayName}`}><img className="me-3 rounded w-8 mt-6" src={user.photoURL} alt="" /></a></div> : <div className="mt-7 me-3">Profile</div>
                 }
             <button className="btn btn-secondary mt-4 lg:ms-auto me-3 rancho">
                 {user ? <Link onClick={handleLogout} className='text-decoration-none text-white px-3' to='/login'>Logout</Link> : <Link to='/login' className='text-decoration-none text-white' >Login</Link>}

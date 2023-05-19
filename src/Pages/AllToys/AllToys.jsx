@@ -8,7 +8,7 @@ const AllToys = () => {
     const [search, setSearch] = useState('')
     const { totalProductNumber } = useLoaderData()
     const [currentPage, setCurrentPage] = useState(0)
-    const [productPerPage, setProductPerPage] = useState(10);
+    const [productPerPage, setProductPerPage] = useState(20);
 
     const totalPage = Math.ceil(totalProductNumber / productPerPage)
     const options = [5, 8, 12, 15]
