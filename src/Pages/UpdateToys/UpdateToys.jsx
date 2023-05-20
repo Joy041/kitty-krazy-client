@@ -1,8 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
-const UpdateToyInfo = () => {
+const UpdateToys = () => {
     const loadToyData = useLoaderData()
     console.log(loadToyData)
 
@@ -15,12 +14,12 @@ const UpdateToyInfo = () => {
         const quantity = form.quantity.value;
         const details = form.details.value;
 
-        const toyInfo = {price, quantity, details}
+        const toyInfo = { price, quantity, details }
 
         fetch(`https://kitty-krazy-server.vercel.app/products/${_id}`, {
-            method: "PUT",
+            method: 'PUT',
             headers: {
-                'content-type': 'application/json'
+                'content-type' : 'application/json'
             },
             body: JSON.stringify(toyInfo)
         })
@@ -38,7 +37,6 @@ const UpdateToyInfo = () => {
             })
 
     }
-
     return (
         <div className="w-1/2 mx-auto mt-14 mb-40">
             <form className="mx-auto" onSubmit={handleUpdateToyForm} >
@@ -69,4 +67,4 @@ const UpdateToyInfo = () => {
     );
 };
 
-export default UpdateToyInfo;
+export default UpdateToys;

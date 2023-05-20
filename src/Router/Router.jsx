@@ -9,7 +9,7 @@ import AllToys from "../Pages/AllToys/AllToys";
 import Details from "../Pages/Details/Details";
 import MyToys from "../Pages/MyToys/MyToys";
 import PrivateRoutes from "../Routes/PrivateRoutes";
-import UpdateToyInfo from "../Pages/UpdateToyInfo/UpdateToyInfo";
+import UpdateToys from "../Pages/UpdateToys/UpdateToys";
 
 const router = createBrowserRouter([
     {
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'update/:id',
-          element: <UpdateToyInfo></UpdateToyInfo>,
+          element: <UpdateToys></UpdateToys>,
           loader: ({params}) => fetch(`https://kitty-krazy-server.vercel.app/products/${params.id}`)
         }
       ]
