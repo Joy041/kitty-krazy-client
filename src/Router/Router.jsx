@@ -8,6 +8,7 @@ import AddToys from "../Pages/AddToys/AddToys";
 import AllToys from "../Pages/AllToys/AllToys";
 import Details from "../Pages/Details/Details";
 import MyToys from "../Pages/MyToys/MyToys";
+import PrivateRoutes from "../Routes/PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -43,8 +44,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'myToys',
-          element: <MyToys></MyToys>,
-          loader: () => fetch('https://kitty-krazy-server.vercel.app/myToys')
+          element: <PrivateRoutes><MyToys></MyToys></PrivateRoutes>
         }
       ]
     },

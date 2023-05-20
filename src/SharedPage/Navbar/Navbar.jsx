@@ -16,6 +16,7 @@ const Navbar = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
+                localStorage.removeItem('kitty-access-token')
             })
     }
 

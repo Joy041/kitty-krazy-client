@@ -20,17 +20,17 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(name, email, password, confirm)
+        console.log(email, password)
 
         setError('')
 
         login(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser)
                 form.reset()
-
                 navigate(from, { replace: true })
+
+
 
                 Swal.fire({
                     title: 'Success!',
@@ -57,8 +57,6 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser)
-                navigate(from, { replace: true })
 
 
                 Swal.fire({
@@ -75,8 +73,7 @@ const Login = () => {
         githubLogin()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser)
-                navigate(from, { replace: true })
+
 
                 Swal.fire({
                     title: 'Success!',

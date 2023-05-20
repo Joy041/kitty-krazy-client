@@ -10,6 +10,7 @@ const AllToys = () => {
     const [currentPage, setCurrentPage] = useState(0)
     const [productPerPage, setProductPerPage] = useState(20);
 
+
     const totalPage = Math.ceil(totalProductNumber / productPerPage)
     const options = [5, 8, 12, 15]
 
@@ -23,7 +24,7 @@ const AllToys = () => {
             setToys(jsonData);
         }
         fetchData()
-    }, [currentPage, productPerPage])
+    }, [currentPage, productPerPage,setToys])
 
     const handleSelectChange = (event) => {
         setProductPerPage(parseInt(event.target.value))
@@ -59,6 +60,8 @@ const AllToys = () => {
                         ))
                     }
                 </select>
+            </div>
+            <div>
             </div>
         </div>
     );

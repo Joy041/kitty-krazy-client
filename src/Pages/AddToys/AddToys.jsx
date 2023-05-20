@@ -21,7 +21,7 @@ const AddToys = () => {
 
         const allInformation = {name, seller, photo, email, price, ratting, quantity, category, details}
 
-        fetch('https://kitty-krazy-server.vercel.app/toys', {
+        fetch('https://kitty-krazy-server.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
@@ -40,24 +40,25 @@ const AddToys = () => {
             }
         })
 
-        fetch('https://kitty-krazy-server.vercel.app/myToys', {
-            method: 'POST',
-            headers: {
-                'content-type' : 'application/json'
-            },
-            body: JSON.stringify(allInformation)
-        })
-        .then(res => res.json())
-        .then(data => {
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Your product added successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
-            }
-        })
+        // fetch('https://kitty-krazy-server.vercel.app/myToys', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type' : 'application/json'
+        //     },
+        //     body: JSON.stringify(allInformation)
+        // })
+        // .then(res => res.json())
+        // .then(data => {
+        //     console.log(data)
+        //     // if(data.insertedId){
+        //     //     Swal.fire({
+        //     //         title: 'Success!',
+        //     //         text: 'Your product added successfully',
+        //     //         icon: 'success',
+        //     //         confirmButtonText: 'Cool'
+        //     //       })
+        //     // }
+        // })
 
 
 
@@ -140,7 +141,7 @@ const AddToys = () => {
                 <div className="form-control">
                     <textarea className="textarea textarea-black border-inherit w-full h-52 mt-6" name="details" placeholder="Details Description"></textarea>
                 </div>
-                <input className='btn bg-orange-300 w-full my-8 text-2xl rancho text-black' type="submit" value= "Add Toy" />
+                <input className='btn bg-pink-500 border-0 w-full my-8 text-2xl rancho text-black' type="submit" value= "Add Toy" />
             </form>
         </div>
     );
