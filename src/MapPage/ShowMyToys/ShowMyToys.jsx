@@ -1,18 +1,15 @@
+import { Link } from "react-router-dom";
 
 
 const ShowMyToys = ({ toy, deleteBtn }) => {
 
-    const { _id, name, seller, photo, price, ratting, quantity } = toy
+    const { _id, name, seller, photo, price, ratting, quantity, details } = toy
 
 
 
     return (
         <tr>
-            <th>
-                <label>
-                    <button onClick={() => deleteBtn(_id)} className="btn">X</button>
-                </label>
-            </th>
+            <td><button onClick={() => deleteBtn(_id)} className="btn">X</button></td>
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
@@ -29,9 +26,10 @@ const ShowMyToys = ({ toy, deleteBtn }) => {
             <td>{price} tk</td>
             <td>{ratting}</td>
             <td>{quantity}</td>
-            <th>
-                <button className="btn  btn-xs">Update</button>
-            </th>
+            <a href="#" data-toggle="tooltip" title={`${details}`}><td>{details.slice(0,20)}...</td></a>
+            <td>
+            <Link to={`/update/${_id}`}><button className="btn  btn-xs">Update</button></Link>
+            </td>
         </tr>
     );
 };

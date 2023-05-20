@@ -39,29 +39,6 @@ const AddToys = () => {
                   })
             }
         })
-
-        // fetch('https://kitty-krazy-server.vercel.app/myToys', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type' : 'application/json'
-        //     },
-        //     body: JSON.stringify(allInformation)
-        // })
-        // .then(res => res.json())
-        // .then(data => {
-        //     console.log(data)
-        //     // if(data.insertedId){
-        //     //     Swal.fire({
-        //     //         title: 'Success!',
-        //     //         text: 'Your product added successfully',
-        //     //         icon: 'success',
-        //     //         confirmButtonText: 'Cool'
-        //     //       })
-        //     // }
-        // })
-
-
-
     }
 
     return (

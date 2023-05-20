@@ -2,21 +2,23 @@ import ShowMyToys from "../../MapPage/ShowMyToys/ShowMyToys";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import Navbar from "../../SharedPage/Navbar/Navbar";
+import Footer from "../../SharedPage/Footer/Footer";
 
 
 const MyToys = () => {
     const [myToys, setMyToys] = useState([])
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     const url = `https://kitty-krazy-server.vercel.app/myToy?email=${user.email}`
     useEffect(() => {
         fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            setMyToys(data)
-        })
-    },[url])
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setMyToys(data)
+            })
+    }, [url])
 
     const deleteBtn = (id) => {
         Swal.fire({
@@ -50,32 +52,37 @@ const MyToys = () => {
     }
 
     return (
-        <div className="mt-12 mx-14 ">
-        <div className="overflow-x-auto w-full">
-            <table className="table w-full">
-                {/* head */}
-                <thead>
-                    <tr>
-                        <th>Delete</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Ratting</th>
-                        <th>Quantity</th>
-                        <th>Update</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {
-                    myToys.map(toy => <ShowMyToys
-                       key={toy._id}
-                       toy={toy}
-                       deleteBtn={deleteBtn}
-                    ></ShowMyToys>)
-                }
-                </tbody>
-            </table>
+        <div>
+            <Navbar></Navbar>
+            <div className="mt-12 mx-14 mb-14">
+                <div className="overflow-x-auto w-full">
+                    <table className="table w-full">
+                        {/* head */}
+                        <thead>
+                            <tr>
+                                <th>Delete</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Ratting</th>
+                                <th>Quantity</th>
+                                <th>Description</th>
+                                <th>Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                myToys.map(toy => <ShowMyToys
+                                    key={toy._id}
+                                    toy={toy}
+                                    deleteBtn={deleteBtn}
+                                ></ShowMyToys>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div className="sticky w-full bottom-0"><Footer></Footer></div>
         </div>
-    </div>
     );
 };
 
