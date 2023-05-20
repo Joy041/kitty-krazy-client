@@ -23,8 +23,6 @@ const MyToys = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data)
-                // setMyToys(data)
                 if (!data.error) {
                     setMyToys(data)
                 }
@@ -66,9 +64,9 @@ const MyToys = () => {
     }
 
     return (
-        <div>
+        <div className="flex flex-col">
             <Navbar></Navbar>
-            <div className="mt-12 mx-14 mb-14">
+            <div className="mt-12 mx-14 mb-64">
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full">
                         {/* head */}

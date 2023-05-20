@@ -55,23 +55,7 @@ const Register = () => {
                 userProfile(loggedUser, name, photo)
                 userVerification(loggedUser)
                 form.reset()
-
-                const user = {
-                    email: loggedUser.email
-                }
-
-                fetch('https://kitty-krazy-server.vercel.app/tokens', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(user)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        localStorage.setItem('kitty-access-token', data.token)
-                        navigate('/login')
-                    })
+                navigate('/login')
 
                 Swal.fire({
                     title: 'Success!',
@@ -103,23 +87,8 @@ const Register = () => {
         googleLogin()
             .then(result => {
                 const loggedUser = result.user;
-
-                const user = {
-                    email: loggedUser.email
-                }
-
-                fetch('https://kitty-krazy-server.vercel.app/tokens', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(user)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        localStorage.setItem('kitty-access-token', data.token)
-                        navigate('/login')
-                    })
+                console.log(loggedUser)
+                navigate('/login')
 
                 Swal.fire({
                     title: 'Success!',
@@ -136,23 +105,8 @@ const Register = () => {
         githubLogin()
             .then(result => {
                 const loggedUser = result.user;
-
-                const user = {
-                    email: loggedUser.email
-                }
-
-                fetch('https://kitty-krazy-server.vercel.app/tokens', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(user)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        localStorage.setItem('kitty-access-token', data.token)
-                        navigate('/login')
-                    })
+                console.log(loggedUser)
+                navigate('/login')
 
                 Swal.fire({
                     title: 'Success!',

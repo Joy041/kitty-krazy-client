@@ -1,6 +1,7 @@
 
 
 const Blog = () => {
+    document.title = 'Kitty-Krazy-Blog'
     return (
         <div className="lg:max-w-7xl mx-auto my-24">
             <div>

@@ -23,7 +23,7 @@ const ShowMyToys = ({ toy, deleteBtn }) => {
                     </div>
                 </div>
             </td>
-            <td>{price} tk</td>
+            <td className="text-orange-400">{price} tk</td>
             <td>{ratting}</td>
             <td>{quantity}</td>
             <a href="#" data-toggle="tooltip" title={`${details}`}><td>{details.slice(0,20)}...</td></a>
