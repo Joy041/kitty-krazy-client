@@ -16,7 +16,6 @@ const Navbar = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
-                localStorage.removeItem('kitty-access-token')
             })
     }
 
@@ -55,6 +54,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link className="btn btn-ghost normal-case text-xl"><img src={logo} className="w-16 rounded-full" alt="" /></Link>
+                <h1 className="rancho text-xl font-semibold mt-4 text-amber-700">Kitty Krazy</h1>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu rancho">

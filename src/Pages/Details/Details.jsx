@@ -2,10 +2,11 @@ import { useLoaderData } from "react-router-dom";
 
 
 const Details = () => {
+    document.title = 'Kitty-Krazy-Details'
 
     const loadToyData = useLoaderData()
 
-    const { name, photo, seller, price, ratting, quantity, category, details } = loadToyData
+    const { name, photo, seller, price, ratting, quantity, category, details, email } = loadToyData
 
     return (
         <div className="my-24">
@@ -18,9 +19,10 @@ const Details = () => {
                             <p className="my-2"><span className="font-bold text-xl">Name :</span> <span className="font-bold text-slate-500">{name}</span></p>
                             <p><span className="font-bold text-xl">Price :</span> <span className="text-orange-400 ">{price} tk</span></p>
                             <p className="my-2"><span className="font-bold text-xl">Quantity :</span> <span className="font-bold text-slate-500">{quantity}</span></p>
-                            <p><span className="font-bold text-xl">Seller :</span> <span className="font-bold text-slate-500">{seller}</span></p>
                             <p className="my-2"><span className="font-bold text-xl">Category :</span> <span className="font-bold text-slate-500">{category}</span></p>
                             <p><span className="font-bold text-xl">Ratting :</span> <span className="font-bold text-slate-500">{ratting}</span></p>
+                            <p><span className="font-bold text-xl">Seller :</span> <span className="font-bold text-slate-500">{seller}</span></p>
+                            <p><span className="font-bold text-xl">Seller Email :</span> <span className="font-bold text-slate-500">{email}</span></p>
                             <div className="card-actions justify-end">
                                 <button className="btn bg-pink-500 border-0 text-xl rancho w-full my-5">Buy Now</button>
                             </div>

@@ -9,6 +9,7 @@ const AllToys = () => {
     const { totalProductNumber } = useLoaderData()
     const [currentPage, setCurrentPage] = useState(0)
     const [productPerPage, setProductPerPage] = useState(20);
+    document.title = 'Kitty-Title-AllToys'
 
 
     const totalPage = Math.ceil(totalProductNumber / productPerPage)

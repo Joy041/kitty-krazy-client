@@ -10,6 +10,7 @@ import Details from "../Pages/Details/Details";
 import MyToys from "../Pages/MyToys/MyToys";
 import PrivateRoutes from "../Routes/PrivateRoutes";
 import UpdateToys from "../Pages/UpdateToys/UpdateToys";
+import Blog from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
       children: [
         {
             path: '/',
-            element: <PrivateRoutes><Home></Home></PrivateRoutes>,
+            element: <Home></Home>,
             loader: () => fetch('https://kitty-krazy-server.vercel.app/allProducts')
         },
         {
@@ -31,22 +32,26 @@ const router = createBrowserRouter([
         },
         {
           path: 'addToy',
-          element: <AddToys></AddToys>
+          element: <PrivateRoutes><AddToys></AddToys></PrivateRoutes>
         },
         {
           path: 'allToy',
-          element: <PrivateRoutes><AllToys></AllToys></PrivateRoutes>,
+          element: <AllToys></AllToys>,
           loader: () => fetch('https://kitty-krazy-server.vercel.app/totalProductNumber')
         },
         {
           path: 'details/:id',
-          element: <Details></Details>,
+          element: <PrivateRoutes><Details></Details></PrivateRoutes>,
           loader: ({params}) => fetch(`https://kitty-krazy-server.vercel.app/products/${params.id}`)
         },
         {
           path: 'update/:id',
           element: <UpdateToys></UpdateToys>,
           loader: ({params}) => fetch(`https://kitty-krazy-server.vercel.app/products/${params.id}`)
+        },
+        {
+          path: 'blog',
+          element: <Blog></Blog>
         }
       ]
     },

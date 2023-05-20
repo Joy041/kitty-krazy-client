@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 const AddToys = () => {
     const {user} = useContext(AuthContext)
+    document.title = 'Kitty-Krazy-AddToys'
 
     const handleAddToyForm = event => {
         event.preventDefault()

@@ -1,17 +1,19 @@
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import Client from "../Client/Client";
 import Deal from "../Deal/Deal";
 import Gallery from "../Gallery/Gallery";
 import 'react-tabs/style/react-tabs.css';
 import { useState } from "react";
-import SubCategory from "../Toys/SubCategory/SubCategory";
+import ShowSubCategory from "../../../MapPage/ShowSubCategory/ShowSubCategory";
+import { useLoaderData } from "react-router-dom";
 
 
 
 const Home = () => {
     const loadProducts = useLoaderData();
     const [products, setProducts] = useState(loadProducts)
+    document.title = 'Kitty-Krazy-Home';
 
     const filterResult = (catItem) => {
         const result = loadProducts.filter(product => {
@@ -19,7 +21,7 @@ const Home = () => {
         })
         setProducts(result)
     }
-
+    
     return (
         <div>
             <Banner></Banner>
@@ -33,10 +35,10 @@ const Home = () => {
                     </div>
                     <div className="flex flex-col md:flex-row gap-8">
                         {
-                            products.slice(0, 2).map(product => <SubCategory
+                            products.slice(0, 2).map(product => <ShowSubCategory
                                 key={product._id}
                                 product={product}
-                            ></SubCategory>)
+                            ></ShowSubCategory>)
                         }
                     </div>
                 </div>
@@ -47,23 +49,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-{/* <Tabs className={'max-w-7xl mx-auto'}>
-    <TabList>
-        <Tab className={'me-14'} onClick={() => filterResult('Cat')}>Fox</Tab>
-        <Tab>Title 2</Tab>
-    </TabList>
-
-    <TabPanel className={'flex'}>
-        {
-            products.slice(0, 2).map(product => <Teddy
-                key={product._id}
-                product={product}
-            ></Teddy>)
-        }
-    </TabPanel>
-    <TabPanel>
-        <h2>Any content 2</h2>
-    </TabPanel>
-</Tabs> */}

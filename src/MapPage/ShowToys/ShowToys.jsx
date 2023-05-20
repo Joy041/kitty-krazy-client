@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ShowToys = ({ toy }) => {
 
-    const { _id, name, seller, photo, price, ratting, quantity} = toy
+    const { _id, name, seller, photo, price, ratting, quantity, category} = toy
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
@@ -12,6 +12,7 @@ const ShowToys = ({ toy }) => {
                 <h2 className="card-title text-3xl font-bold">{name}</h2>
                 <p><span className="font-bold">Price :</span> <span className="text-orange-400 ">{price} tk</span></p>
                 <p><span className="font-bold">Quantity :</span> {quantity}</p>
+                <p><span className="font-bold">Category :</span> {category}</p>
                 <p><span className="font-bold">Seller :</span> {seller}</p>
                 <p><span className="font-bold">Ratting :</span> {ratting}</p>
                 <div className="card-actions justify-end">

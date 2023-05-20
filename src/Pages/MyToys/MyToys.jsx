@@ -4,21 +4,35 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import Navbar from "../../SharedPage/Navbar/Navbar";
 import Footer from "../../SharedPage/Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 
 const MyToys = () => {
     const [myToys, setMyToys] = useState([])
     const { user } = useContext(AuthContext)
+    const navigate = useNavigate()
+    document.title = 'Kitty-Krazy-MyToys'
 
     const url = `https://kitty-krazy-server.vercel.app/myToy?email=${user.email}`
     useEffect(() => {
-        fetch(url)
+        fetch(url,{
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('kitty-access-token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                setMyToys(data)
+                // console.log(data)
+                // setMyToys(data)
+                if (!data.error) {
+                    setMyToys(data)
+                }
+                else{
+                     navigate('/')
+                }
             })
-    }, [url])
+    }, [url,navigate])
 
     const deleteBtn = (id) => {
         Swal.fire({
@@ -81,7 +95,7 @@ const MyToys = () => {
                     </table>
                 </div>
             </div>
-            <div className="sticky w-full bottom-0"><Footer></Footer></div>
+            <div className="fixed w-full bottom-0"><Footer></Footer></div>
         </div>
     );
 };

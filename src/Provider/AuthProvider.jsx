@@ -39,6 +39,27 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
             setLoading(false)
+
+            if (currentUser && currentUser.email) {
+                const userEmail = { email: currentUser.email };
+
+            fetch('https://kitty-krazy-server.vercel.app/tokens', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(userEmail)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('jwt', data)
+                    localStorage.setItem('kitty-access-token', data.token)
+                })
+            }
+            else{
+                localStorage.removeItem('kitty-access-token')
+            }
+
         });
         return () => {
             unsubscribe();
