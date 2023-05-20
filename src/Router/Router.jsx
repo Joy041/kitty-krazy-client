@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       children: [
         {
             path: '/',
-            element: <Home></Home>,
+            element: <PrivateRoutes><Home></Home></PrivateRoutes>,
             loader: () => fetch('https://kitty-krazy-server.vercel.app/allProducts')
         },
         {
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'allToy',
-          element: <AllToys></AllToys>,
+          element: <PrivateRoutes><AllToys></AllToys></PrivateRoutes>,
           loader: () => fetch('https://kitty-krazy-server.vercel.app/totalProductNumber')
         },
         {

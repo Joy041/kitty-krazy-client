@@ -1,8 +1,8 @@
 
 
-const ShowMyToys = ({ toy }) => {
+const ShowMyToys = ({ toy, deleteBtn }) => {
 
-    const {  name, seller, photo, price, ratting, quantity } = toy
+    const { _id, name, seller, photo, price, ratting, quantity } = toy
 
 
 
@@ -10,7 +10,7 @@ const ShowMyToys = ({ toy }) => {
         <tr>
             <th>
                 <label>
-                    <button  className="btn">X</button>
+                    <button onClick={() => deleteBtn(_id)} className="btn">X</button>
                 </label>
             </th>
             <td>
