@@ -12,23 +12,23 @@ const Gallery = () => {
         <div className='lg:max-w-7xl md:max-w-full mx-auto my-28'>
             <h1 className='text-center font-bold text-5xl text-lime-500 mb-20'>Products Gallery</h1>
             <div className='flex flex-col gap-4 md:flex-row items-center justify-center mx-4'>
-                <div className="card w-96 bg-base-100 shadow-xl shadow-orange-300" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
-                    <Link to={'allToy'}><figure ><img src={img1} className='rounded-xl' alt="Shoes" /></figure></Link>
+                <div className="card w-80 md:96 bg-base-100 shadow-xl shadow-orange-300" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <Link to={'allToy'}><figure ><img src={img1} className='rounded-xl mx-2' alt="Shoes" /></figure></Link>
                 </div>
-                <div data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="card w-96 mx-2 bg-base-100 shadow-xl shadow-orange-300">
-                    <Link to={'allToy'}><figure ><img src={img2} className='rounded-xl' alt="Shoes" /></figure></Link>
+                <div data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="card w-80 md:96 mx-2 bg-base-100 shadow-xl shadow-orange-300">
+                    <Link to={'allToy'}><figure ><img src={img2} className='rounded-xl mx-2' alt="Shoes" /></figure></Link>
                 </div>
-                <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="card w-96 bg-base-100 shadow-xl shadow-orange-300">
-                    <Link to={'allToy'}><figure ><img src={img3} className='rounded-xl' alt="Shoes" /></figure></Link>
+                <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="card w-80 md:96 bg-base-100 shadow-xl shadow-orange-300">
+                    <Link to={'allToy'}><figure ><img src={img3} className='rounded-xl mx-2' alt="Shoes" /></figure></Link>
                 </div>
-                <div data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="card w-96 mx-2 bg-base-100 shadow-xl shadow-orange-300">
-                    <Link to={'allToy'}> <figure ><img src={img4} className='rounded-xl' alt="Shoes" /></figure></Link>
+                <div data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="card w-80 md:96 mx-2 bg-base-100 shadow-xl shadow-orange-300">
+                    <Link to={'allToy'}> <figure ><img src={img4} className='rounded-xl mx-2' alt="Shoes" /></figure></Link>
                 </div>
-                <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="card w-96 me-2 bg-base-100 shadow-xl shadow-orange-300">
-                    <Link to={'allToy'}><figure ><img src={img5} className='rounded-xl' alt="Shoes" /></figure></Link>
+                <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="card w-80 md:96 me-2 bg-base-100 shadow-xl shadow-orange-300">
+                    <Link to={'allToy'}><figure ><img src={img5} className='rounded-xl mx-2' alt="Shoes" /></figure></Link>
                 </div>
-                <div data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="card w-96 bg-base-100 shadow-xl shadow-orange-300">
-                    <Link to={'allToy'}><figure ><img src={img6} className='rounded-xl' alt="Shoes" /></figure></Link>
+                <div data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000" className="card w-80 md:96 bg-base-100 shadow-xl shadow-orange-300">
+                    <Link to={'allToy'}><figure ><img src={img6} className='rounded-xl mx-2' alt="Shoes" /></figure></Link>
                 </div>
             </div>
         </div>

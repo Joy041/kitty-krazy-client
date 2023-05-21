@@ -11,13 +11,13 @@ const ShowToys = ({ toy }) => {
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
-                        <div className="mask mask-squircle w-32 h-32">
+                        <div className="mask mask-squircle md:w-32 w-8 md:h-32 h-8">
                             <img src={photo} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
                 </div>
             </td>
-            <td className="font-bold text-xl">{name}</td>
+            <td className="md:font-bold font-semibold md:text-xl">{name}</td>
             <td className="text-orange-400">{price} tk</td>
             <td>{quantity}</td>
             <td>{category}</td>

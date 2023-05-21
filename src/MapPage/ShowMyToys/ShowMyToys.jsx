@@ -18,7 +18,7 @@ const ShowMyToys = ({ toy, deleteBtn }) => {
                         </div>
                     </div>
                     <div>
-                        <div className="font-bold">{name}</div>
+                        <div className="md:font-bold font-semibold md:text-xl">{name}</div>
                         <div className="text-sm opacity-50">{seller}</div>
                     </div>
                 </div>

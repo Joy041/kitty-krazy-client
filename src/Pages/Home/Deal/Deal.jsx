@@ -4,7 +4,7 @@ import deaImg from '../../../assets/deal-img.jpg'
 
 const Deal = () => {
     return (
-        <div className='w-full carousel h-96 my-36'>
+        <div className='w-full carousel h-72 md:h-96 my-20 md:my-36'>
             <div className='relative'>
                 <img src={deaImg} alt="" />
                 <div className='absolute top-14 md:top-28 left-12 md:left-1/4 lg:top-16 lg:left-1/3 rancho'>

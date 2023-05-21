@@ -5,7 +5,7 @@ import client3 from '../../../assets/client-3.jpg'
 
 const Client = () => {
     return (
-        <div className="carousel w-full h-[500px] mb- text-white">
+        <div className="carousel w-full h-[500px] text-white">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src={clientBg} className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 right-5 bottom-0">
